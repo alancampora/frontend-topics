@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import StyledApp from "./styled";
 
-const Index = () => {
-  return <div>Hello React!</div>;
+const App = () => {
+  return <StyledApp>Hello Frontend topics!</StyledApp>;
 };
 
-ReactDOM.render(<Index />, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById("app"));
