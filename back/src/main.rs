@@ -18,7 +18,7 @@ fn create(post: Json<Post>) -> Json<Post> {
 #[get("/")]
 fn read() -> Json<Value> {
     Json(json!([
-        "post 1", 
+        {"id": "234jhE#$12414", "title":"first post", "author":"alan campora"},
         "post 2"
     ]))
 }
