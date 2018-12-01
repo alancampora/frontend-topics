@@ -31,8 +31,13 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-redux": "^5.1.1",
+    "redux": "^4.0.1",
+    "redux-action-reducer-mapper": "^1.0.2",
+    "redux-saga": "^0.16.2",
     "styled-components": "^4.1.2"
   }
 }

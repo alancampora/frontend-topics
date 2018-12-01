@@ -6,16 +6,27 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 module.exports = {
+  devtool: 'source-map',
+  devServer:{
+	  proxy:{
+	  	'**':{
+			target: 'http://[::1]:8000',
+			changeOrigin: true,
+			secure: false,
+		},
+	  }
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.js$|\.jsx$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader"
         }
       }
     ]
+
   },
   plugins: [htmlPlugin],
 };
