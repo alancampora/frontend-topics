@@ -7,9 +7,9 @@ export const POSTS_FETCH_SUCCEESS = 'POSTS_FETCH_SUCCEESS';
 function* fetchPosts(action) {
    try {
 
-	   const data = yield call(axios.get, 'http://localhost:8080/posts');
+	   const response = yield call(axios.get, 'http://localhost:8080/api/v1/posts');
 
-	   const posts = data.data;
+	   const { posts } = response.data;
 
 	   yield put({
 		   type: POSTS_FETCH_SUCCEESS, 

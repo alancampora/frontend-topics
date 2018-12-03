@@ -10,7 +10,7 @@ module.exports = {
   devServer:{
 	  proxy:{
 	  	'**':{
-			target: 'http://[::1]:8000',
+			target: 'http://[::1]:3001',
 			changeOrigin: true,
 			secure: false,
 		},
