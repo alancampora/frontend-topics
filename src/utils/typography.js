@@ -1,15 +1,16 @@
-import Typography from 'typography';
+import Typography from "typography";
 
 const typography = new Typography({
   headerFontFamily: [
-    'Avenir Next',
-    'Helvetica Neue',
-    'Segoe UI',
-    'Helvetica',
-    'Arial',
-    'sans-serif',
+    "Rosario",
+    "Avenir Next",
+    "Helvetica Neue",
+    "Segoe UI",
+    "Helvetica",
+    "Arial",
+    "sans-serif",
   ],
-  bodyFontFamily: ['Georgia', 'serif'],
+  bodyFontFamily: ["Lato", "serif"],
 });
 
 export default typography;

@@ -40,15 +40,16 @@ exports.sourceNodes = async ({
   createNode(ytNode);
 
   videos.forEach(video => {
+    const props = video.snippet;
     const nodeMetadata = {
       id: createNodeId(video.id.videoId),
       parent: "ytNode",
-      snippet: video.snippet,
       children: [],
       internal: {
         type: "ytVideo",
         contentDigest: createContentDigest(video),
       },
+      ...props,
     };
 
     const node = Object.assign({}, video, nodeMetadata);
