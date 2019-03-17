@@ -1,18 +1,6 @@
-// const {createFilePath} = require('gatsby-source-filesystem');
-// const path = require('path');
-const ypi = require("youtube-channel-videos");
-const secrets = require('./secrets');
+const youtube = require("./youtube");
+const secrets = require("./secrets");
 const crypto = require(`crypto`);
-
-const getVideos = function(key, channelId) {
-  return new Promise(resolve => {
-    ypi.channelVideos(
-      key,
-      channelId,
-      items => resolve(items),
-    );
-  });
-};
 
 exports.sourceNodes = async ({
   actions,
@@ -20,13 +8,15 @@ exports.sourceNodes = async ({
   createNodeId,
 }) => {
   const { createNode } = actions;
+  const { key, channelId } = secrets;
+  const videos = await youtube.channelVideos(key, channelId);
 
-  const videos = await getVideos(secrets.key, secrets.channelId);
+  console.log(videos);
 
   const ytNode = {
     id: "ytNode",
     parent: null,
-    children: videos.map(video => createNodeId(video.id.videoId)),
+    children: videos.map(video => createNodeId(video.id)),
     internal: {
       type: "ytNode",
     },
@@ -42,7 +32,7 @@ exports.sourceNodes = async ({
   videos.forEach(video => {
     const props = video.snippet;
     const nodeMetadata = {
-      id: createNodeId(video.id.videoId),
+      id: createNodeId(video.id),
       parent: "ytNode",
       children: [],
       internal: {

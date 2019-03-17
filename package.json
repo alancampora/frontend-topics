@@ -26,6 +26,7 @@
     "typeface-lato": "0.0.54",
     "typeface-rosario": "0.0.72",
     "typography": "^0.16.18",
+    "youtube-api": "^2.0.10",
     "youtube-channel-videos": "^1.0.0",
     "youtube-playlist-info": "^1.1.2"
   },
