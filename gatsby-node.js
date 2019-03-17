@@ -8,10 +8,8 @@ exports.sourceNodes = async ({
   createNodeId,
 }) => {
   const { createNode } = actions;
-  const { key, channelId } = secrets;
-  const videos = await youtube.channelVideos(key, channelId);
-
-  console.log(videos);
+  const { keyBackup, channelId } = secrets;
+  const videos = await youtube.channelVideos(keyBackup, channelId);
 
   const ytNode = {
     id: "ytNode",

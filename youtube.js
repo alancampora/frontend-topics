@@ -16,7 +16,7 @@ const getChannel = function(pageToken, channelId) {
         type: "video",
         part: "snippet",
         pageToken: pageToken,
-        maxResults: 50,
+        maxResults: 2,
         channelId: channelId,
       },
       (err, data) => resolve(data),
@@ -41,19 +41,14 @@ const getVideo = function(id) {
 };
 
 /**
- * Recursevely gets channels video. 
+ * Recursevely gets channels video.
  * Get channel retrives bare props for the video that's why it's needed to perform one more request per video.
  * @param {string} channelId
  * @param {number} callStackSize
  * @param {string} pageToken
  * @param {array} currentItems
  */
-async function channelVideosRecursive(
-  channelId,
-  callStackSize,
-  pageToken,
-  currentItems,
-) {
+async function channelVideosRecursive(channelId, pageToken, currentItems) {
   const data = await getChannel(pageToken, channelId);
 
   for (var x in data.items) {
@@ -63,12 +58,7 @@ async function channelVideosRecursive(
   }
 
   if (data.nextPageToken) {
-    channelVideosRecursive(
-      channelId,
-      callStackSize + 1,
-      data.nextPageToken,
-      currentItems,
-    );
+    channelVideosRecursive(channelId, data.nextPageToken, currentItems);
   }
   return currentItems;
 }
@@ -79,5 +69,5 @@ exports.channelVideos = function(apiKey, channelId) {
     key: apiKey,
   });
 
-  return new Promise.resolve(channelVideosRecursive(channelId, 0, null, []));
+  return new Promise.resolve(channelVideosRecursive(channelId, null, []));
 };
