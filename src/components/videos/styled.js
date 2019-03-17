@@ -1,9 +1,25 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const bounceAnimation = keyframes`
+25% {
+  transform: scale(1.2);
+}
+50% {
+  transform: scale(1);
+}
+75% {
+  transform: scale(1.2);
+}
+100% {
+  transform: scale(1);
+}
+`;
 
 export const StyledWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 40rem;
+  padding-top: 100px;
 `;
 export const StyledVideo = styled.a`
   margin: 1.2rem;
@@ -19,12 +35,15 @@ export const StyledContent = styled.div`
 export const StyledImage = styled.div`
   margin: 0;
   text-align: center;
+
   img {
     height: 150px;
-    /* background: black; */
     border-radius: 50%;
     padding: 3px;
     border: 5px solid black;
+  }
+  :hover {
+    animation: ${bounceAnimation} 2s linear infinite;
   }
 `;
 
