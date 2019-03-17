@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: "/frontend-topics",
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
