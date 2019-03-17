@@ -16,7 +16,7 @@ const getChannel = function(pageToken, channelId) {
         type: "video",
         part: "snippet",
         pageToken: pageToken,
-        maxResults: 2,
+        maxResults: 50,
         channelId: channelId,
       },
       (err, data) => resolve(data),

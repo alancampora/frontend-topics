@@ -1,7 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
-import Videos from "./videos";
+import Videos from "../components/videos";
+import Header from "../components/Header";
 
 export const StyledWrapper = styled.div`
   margin: 1rem;
@@ -9,8 +10,7 @@ export const StyledWrapper = styled.div`
 
 export default ({ data }) => (
   <StyledWrapper>
-    <h1> Frontend topics </h1>
-    <p> Welcome to our frontend community. Checkout my tutorials about React, gatsby and much more!</p>
+    <Header title="Frontend topics"/>
     <Videos videos={data.ytNode.childrenYtVideo} />
   </StyledWrapper>
 );
@@ -19,6 +19,7 @@ export const query = graphql`
   {
     ytNode {
       childrenYtVideo {
+        tags
         id
         publishedAt
         channelId
