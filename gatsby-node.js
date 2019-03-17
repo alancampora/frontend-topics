@@ -14,7 +14,7 @@ exports.sourceNodes = async ({
   const ytNode = {
     id: "ytNode",
     parent: null,
-    children: videos.map(video => createNodeId(video.id)),
+    children: videos.map(video => video.id),
     internal: {
       type: "ytNode",
     },
@@ -30,7 +30,7 @@ exports.sourceNodes = async ({
   videos.forEach(video => {
     const props = video.snippet;
     const nodeMetadata = {
-      id: createNodeId(video.id),
+      id: video.id,
       parent: "ytNode",
       children: [],
       internal: {

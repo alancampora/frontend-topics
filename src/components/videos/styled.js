@@ -5,8 +5,10 @@ export const StyledWrapper = styled.div`
   margin-right: auto;
   max-width: 40rem;
 `;
-export const StyledVideo = styled.div`
-  margin: 1rem;
+export const StyledVideo = styled.a`
+  margin: 1.2rem;
+  display: block;
+  text-decoration: none;
 `;
 export const StyledContent = styled.div`
   padding: 1rem;
@@ -18,13 +20,12 @@ export const StyledImage = styled.div`
   margin: 0;
   text-align: center;
   img {
-
     height: 150px;
     /* background: black; */
     border-radius: 50%;
     padding: 3px;
     border: 5px solid black;
-      }
+  }
 `;
 
 export const StyledText = styled.div`

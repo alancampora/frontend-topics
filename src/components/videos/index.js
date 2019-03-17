@@ -19,16 +19,20 @@ const Videos = ({ videos }) => (
   <StyledWrapper>
     {videos &&
       videos.map(video => (
-        <StyledVideo key={video.id}>
+        <StyledVideo
+          key={video.id}
+          href={`https://www.youtube.com/watch?v=${video.id}`}
+          aria-label={`open ${video.title}`}
+          target="_blank"
+        >
           <StyledImage>
-            <img
-              src={`/img/${getFramework(video.tags)}.png`}
-              alt=""
-            />
+            <img src={`/img/${getFramework(video.tags)}.png`} alt="" />
           </StyledImage>
           <StyledContent>
             <h3> {video.title}</h3>
-            <StyledText dangerouslySetInnerHTML={createMarkup(video.description)} />
+            <StyledText
+              dangerouslySetInnerHTML={createMarkup(video.description)}
+            />
           </StyledContent>
         </StyledVideo>
       ))}
