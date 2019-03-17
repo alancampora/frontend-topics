@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Videos from "./videos";
 
 export const StyledWrapper = styled.div`
+  margin: 1rem;
 `;
 
 export default ({ data }) => (
