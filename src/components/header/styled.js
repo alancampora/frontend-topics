@@ -10,9 +10,10 @@ export const StyledWrapper = styled.div`
   padding: 1rem;
   -webkit-box-shadow: 0px 0px 9px 3px rgba(41, 41, 41, 0.04);
   -moz-box-shadow: 0px 0px 9px 3px rgba(41, 41, 41, 0.04);
-  box-shadow: 0px 0px 9px 3px rgba(41, 41, 41, 0.04)
+  box-shadow: 0px 0px 9px 3px rgba(41, 41, 41, 0.04);
 `;
 export const StyledTitle = styled.h1`
-  font-size: 2.5em;
+  font-size: 2em;
   margin: 0;
+  text-transform: uppercase;
 `;

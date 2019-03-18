@@ -2,7 +2,7 @@ import Typography from "typography";
 
 const typography = new Typography({
   headerFontFamily: [
-    "Rosario",
+    "Allerta",
     "Avenir Next",
     "Helvetica Neue",
     "Segoe UI",
