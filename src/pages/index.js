@@ -2,8 +2,8 @@ import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 import Videos from "../components/videos";
-import Header from "../components/Header";
-import { Helmet } from "react-helmet";
+import Header from "../components/header";
+import SEO from "../components/seo";
 
 export const StyledWrapper = styled.div`
   margin: 1rem;
@@ -11,12 +11,7 @@ export const StyledWrapper = styled.div`
 
 export default ({ data }) => (
   <StyledWrapper>
-    <Helmet>
-      <meta charSet="utf-8" />
-      <title>Frontend topics</title>
-      <link rel="canonical" href="https://frontendtopics.com" />
-    </Helmet>
-
+    <SEO />
     <Header title="Frontend topics" />
     <Videos videos={data.ytNode.childrenYtVideo} />
   </StyledWrapper>

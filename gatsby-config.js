@@ -1,4 +1,11 @@
 module.exports = {
+  siteMetadata: {
+    title: "Frontend Topics",
+    titleTemplate: "The first front-end development community",
+    description:
+      "The first front-end development community",
+    url: "https://www.frontendtopics.com", // No trailing slash allowed!
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
