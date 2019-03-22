@@ -1,4 +1,4 @@
-const youtube = require("./youtube");
+const youtube = require("./youtube-playlist");
 const secrets = require("./secrets");
 const crypto = require(`crypto`);
 
@@ -9,12 +9,11 @@ exports.sourceNodes = async ({
 }) => {
   const { createNode } = actions;
   const { keyBackup, channelId } = secrets;
-  const videos = await youtube.channelVideos(keyBackup, channelId);
-
+  const playlists = await youtube.channelPlaylists(keyBackup, channelId);
   const ytNode = {
     id: "ytNode",
     parent: null,
-    children: videos.map(video => video.id),
+    children: playlists.map(playlist => playlist.id),
     internal: {
       type: "ytNode",
     },
@@ -27,20 +26,20 @@ exports.sourceNodes = async ({
   ytNode.internal.contentDigest = contentDigest;
   createNode(ytNode);
 
-  videos.forEach(video => {
-    const props = video.snippet;
+  playlists.forEach(playlist => {
+    const props = playlist.snippet;
     const nodeMetadata = {
-      id: video.id,
+      id: playlist.id,
       parent: "ytNode",
       children: [],
       internal: {
-        type: "ytVideo",
-        contentDigest: createContentDigest(video),
+        type: "ytPlaylist",
+        contentDigest: createContentDigest(playlist),
       },
       ...props,
     };
 
-    const node = Object.assign({}, video, nodeMetadata);
+    const node = Object.assign({}, playlist, nodeMetadata);
     createNode(node);
   });
 };
