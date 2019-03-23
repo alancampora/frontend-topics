@@ -26,6 +26,7 @@ export const StyledVideo = styled.a`
   background: #f6e510c4;
   color: #010101;
   border-radius: 10px;
+  box-shadow: 10px 10px 20px rgba(136, 136, 136, 0.14);
 `;
 export const StyledDetails = styled.div`
   padding: 1rem;
