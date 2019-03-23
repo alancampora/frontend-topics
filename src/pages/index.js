@@ -12,7 +12,7 @@ export const StyledWrapper = styled.div`
 export default ({ data }) => (
   <StyledWrapper>
     <SEO />
-    <Header title="Frontend topics" />
+    <Header/>
     <Playlists playlists={data.ytNode.childrenYtPlaylist} />
   </StyledWrapper>
 );

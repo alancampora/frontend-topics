@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
 import { StyledWrapper, StyledTitle } from "./styled";
+import Logo from "../logo";
 
-const Header = ({ title }) => (
+const Header = () => (
   <StyledWrapper>
-    <StyledTitle>{title}</StyledTitle>
+    <Logo />
   </StyledWrapper>
 );
 
