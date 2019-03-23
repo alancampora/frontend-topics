@@ -20,7 +20,7 @@ export const StyledWrapper = styled.div`
 const Logo = () => (
   <StyledWrapper>
     <StyledBrackets>{`<`}</StyledBrackets>
-    <StyledText>{`Frontendtopics`}</StyledText>
+    <StyledText>{`FrontendTopics`}</StyledText>
     <StyledBrackets>{`/>`}</StyledBrackets>
   </StyledWrapper>
 );
