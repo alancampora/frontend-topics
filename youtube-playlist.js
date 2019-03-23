@@ -50,7 +50,7 @@ const getVideo = function(id) {
     youtube.videos.list(
       {
         id,
-        part: "snippet",
+        part: "snippet,contentDetails,statistics",
       },
       (err, data) => resolve(data),
     );
