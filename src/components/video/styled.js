@@ -17,6 +17,10 @@ const bounceAnimation = keyframes`
 
 export const StyledWrapper = styled.div`
   width: 50%;
+
+ @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
 export const StyledVideo = styled.a`
   margin: 1.2rem;
