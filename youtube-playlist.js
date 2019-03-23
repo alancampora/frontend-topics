@@ -50,7 +50,7 @@ const getVideo = function(id) {
     youtube.videos.list(
       {
         id,
-        part: "snippet,contentDetails,statistics",
+        part: "snippet,contentDetails,statistics"
       },
       (err, data) => resolve(data),
     );
@@ -79,7 +79,6 @@ async function channelPlaylistVideos(channelId, pageToken, currentItems) {
       extendedPlaylistItems.push({ ...playlistItem, video });
     }
 
-    console.log(extendedPlaylistItems);
     playlist = { ...playlist, playlistItems: extendedPlaylistItems };
 
     currentItems.push(playlist);
